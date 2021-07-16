@@ -19,6 +19,7 @@ const BarChart = ( props ) => {
     return (
         <div>
             <Chart
+                style={{ marginTop:'200px'}}
                 width={'500px'}
                 height={'300px'}
                 chartType="BarChart"
@@ -32,11 +33,11 @@ const BarChart = ( props ) => {
                     minValue: 0,
                     },
                     vAxis: {
-                    title: 'name',
+                    title: 'Name Of Students',
                     },
                 }}
                 // For tests
-                rootProps={{ 'data-testid': '1' }}
+                // rootProps={{ 'data-testid': '1' }}
             />
         </div>
     )
