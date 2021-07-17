@@ -10,3 +10,5 @@ function filterData( tableData ){
 }
 
 export default filterData
+
+// this function remove the empty array like [""]

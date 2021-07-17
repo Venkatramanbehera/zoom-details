@@ -1,10 +1,10 @@
 import React from 'react'
-import File from './File'
+import FileContainer from './FileContainer'
 
 const App = (props) => {
   return (
     <div>
-      <File/>
+      <FileContainer/>
     </div>
   )
 }

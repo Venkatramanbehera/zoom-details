@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import Report from './Report'
+import filterData from './helper/FilterData'
 
 const useStyle = makeStyles({
     table:{
@@ -24,27 +25,21 @@ const TableData = (props) => {
     const classes = useStyle()
 
     const { data } = props
+    // extracting the table body data from 2d array
     const tableDataW = data.slice(1,data.length)
-    
-    function filterData( tableData ){
-        const result = []
-        for( let i=0 ; i<tableData.length ; i++){
-            const d = tableData[i]
-            if(!d.includes("")){
-                result.push(d)
-            }
-        }
-        return result
-    }
+    // for filtering 2d array using a helper function of filter data
     const tableData = filterData(tableDataW)
     
     return (
         <div>
+            {/* Report Component */}
             <Report data={ tableData }/>
+
             <h1>Table Data</h1>
             <table className={ classes.table }>
                 <thead>
                     <tr>
+                        {/* i use data[0] because in the 2d array first row of array is the heading of the table. */}
                         {
                             data[0].map((d,i) => {
                                 return <th key={i} className={ classes.td }>{d}</th>
